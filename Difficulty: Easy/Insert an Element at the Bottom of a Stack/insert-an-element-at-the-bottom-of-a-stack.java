@@ -29,7 +29,9 @@ class GFG {
                 out.print(i + " ");
             }
             out.println();
-        }
+        
+out.println("~");
+}
         out.close();
     }
 }
@@ -40,15 +42,16 @@ class GFG {
 //User function Template for Java
 class Solution {
     public Stack<Integer> insertAtBottom(Stack<Integer> st, int x) {
-        if(st.isEmpty()){
-        st.push(x);
-        return st; }
-        else 
+        if(st.isEmpty())
         {
-            int y=st.pop();
-            insertAtBottom(st, x);
-            st.push(y);
+            st.push(x);
+            //System.out.println(st.peek());
             return st;
         }
+        int curr=st.pop();
+        //System.out.println(curr+"top");
+        insertAtBottom(st,x);
+        st.push(curr);
+        return st;
     }
 }
